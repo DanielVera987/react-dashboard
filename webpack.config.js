@@ -13,49 +13,47 @@ module.exports = {
         alias: {
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@components': path.resolve(__dirname, 'src/components'),
+            '@layout': path.resolve(__dirname, 'src/components/Layout'),
             '@pages': path.resolve(__dirname, 'src/pages'),
+            '@pages-auth': path.resolve(__dirname, 'src/pages/Auth'),
             '@styles': path.resolve(__dirname, 'src/styles'),
-        }
+        },
     },
     module: {
         rules: [
-            { 
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                }
+                },
             },
             {
                 test: /\.html$/,
                 use: [
                     {
                         loader: 'html-loader',
-                    }
-                ]
+                    },
+                ],
             },
             {
                 test: /\.(css|scss)$/i,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                type: 'asset'
-            }
-        ]
+                type: 'asset',
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            filename: './index.html'
+            filename: './index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css'
-        })
+            filename: '[name].css',
+        }),
     ],
     devServer: {
         static: path.join(__dirname, 'dist'),
@@ -63,5 +61,5 @@ module.exports = {
         port: 3000,
         historyApiFallback: true,
         open: true,
-    }
-}
+    },
+};
