@@ -1,20 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '@components/Home';
-import Login from '@pages/Login/Login';
-import Register from '@pages/Register/Register';
+import Layout from '@components/Layout/Layout';
+import Login from '@pages-auth/Login/Login';
+import Register from '@pages-auth/Register/Register';
 
 import '@styles/global.scss';
 
 const App = () => {
+    function PrivateRoute({ children }) {
+        const auth = true;
+        return auth ? <Layout>{children}</Layout> : <Navigate to="/login" />;
+    }
+
     return (
-        <Router>
+        <>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/login" element={<Login />} />
-                <Route exact path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} exac />
+                <Route path="/register" element={<Register />} exac />
+                <Route
+                    path="/"
+                    element={<PrivateRoute>{<div>Hello</div>}</PrivateRoute>}
+                />
             </Routes>
-        </Router>
+        </>
     );
 };
 
