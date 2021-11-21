@@ -6,6 +6,7 @@ import Login from '@pages-auth/Login/Login';
 import Register from '@pages-auth/Register/Register';
 
 import '@styles/global.scss';
+import Dashboard from '../pages/Dashboard/Dashboard';
 
 const App = () => {
     function PrivateRoute({ children }) {
@@ -20,7 +21,11 @@ const App = () => {
                 <Route path="/register" element={<Register />} exac />
                 <Route
                     path="/"
-                    element={<PrivateRoute>{<div>Hello</div>}</PrivateRoute>}
+                    element={
+                        <PrivateRoute>
+                            <Dashboard />
+                        </PrivateRoute>
+                    }
                 />
             </Routes>
         </>
