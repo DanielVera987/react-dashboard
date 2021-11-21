@@ -1,45 +1,27 @@
 import React from 'react';
+import Avatar from '@components/Avatar/Avatar';
 
-const Header = () => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+const Header = ({handleToogle}) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    @_davadev
-                </a>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarsExample09"
-                    aria-controls="navbarsExample09"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon" />
+        <nav className="d-flex justify-content-between mx-4 mt-3">
+            <div className="d-flex">
+                <button type="button" className="border-0 bg-transparent" onClick={handleToogle}>
+                    <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarsExample09">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <a
-                                className="nav-link active"
-                                aria-current="page"
-                                href="#"
-                            >
-                                Home
-                            </a>
-                        </li>
-                    </ul>
-                    <form>
-                        <input
-                            className="form-control"
-                            type="text"
-                            placeholder="Search"
-                            aria-label="Search"
-                        />
-                    </form>
-                </div>
+                <form className="ms-4">
+                    <input
+                        className="form-control"
+                        type="text"
+                        placeholder="Search"
+                        aria-label="Search"
+                    />
+                </form>
             </div>
+
+            <Avatar fullName="Daniel Vera" pathImg="https://avatars.githubusercontent.com/u/59943431?v=4"/>
         </nav>
     );
 };

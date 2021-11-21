@@ -2,18 +2,11 @@ import React from 'react';
 
 const Sidebar = () => {
     return (
-        <div
-            className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-            style={{ height: '100vh' }}
+        <nav className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
+            style={{ height: '100vh', position: 'fixed'}}
         >
-            <a
-                href="/"
-                className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-            >
-                <svg className="bi me-2" width={40} height={32}>
-                    <use xlinkHref="#bootstrap" />
-                </svg>
-                <span className="fs-4">React Dashboard</span>
+            <a href="/" className="text-decoration-none text-white">
+                <span className="fs-5">React Dashboard</span>
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
@@ -57,27 +50,8 @@ const Sidebar = () => {
                         Customers
                     </a>
                 </li>
-            </ul>
-            <hr />
-            <div className="dropdown">
-                <a
-                    href="#"
-                    className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    id="dropdownUser1"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                >
-                    <img
-                        src="https://github.com/mdo.png"
-                        alt="foto"
-                        width={32}
-                        height={32}
-                        className="rounded-circle me-2"
-                    />
-                    <strong>mdo</strong>
-                </a>
-            </div>
-        </div>
+            </ul>   
+        </nav>
     );
 };
 
