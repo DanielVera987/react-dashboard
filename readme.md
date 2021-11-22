@@ -14,6 +14,8 @@ React Dashboard es un proyecto que fue creado con la finalidad de poder hacer us
 - Crear vista de usuarios
 - Integrar formik
 - Diseñar formularios para crear usuarios
+- Configuración para rutas
+- Agregar pagina 404
 
 ### Alias
 
