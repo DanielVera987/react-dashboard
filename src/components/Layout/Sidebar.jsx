@@ -3,7 +3,7 @@ import React from 'react';
 const Sidebar = () => {
     return (
         <nav className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
-            style={{ height: '100vh', position: 'fixed'}}
+            style={{ height: '100vh', position: 'fixed', width: 'inherit'}}
         >
             <a href="/" className="text-decoration-none text-white">
                 <span className="fs-5">React Dashboard</span>
@@ -50,7 +50,7 @@ const Sidebar = () => {
                         Customers
                     </a>
                 </li>
-            </ul>   
+            </ul>
         </nav>
     );
 };
