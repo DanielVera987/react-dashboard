@@ -29,15 +29,7 @@ const data = {
 };
 
 const options = {
-    scales: {
-        yAxes: [
-            {
-                ticks: {
-                    beginAtZero: true,
-                },
-            },
-        ],
-    },
+    responsive: true,
 };
 
 const ChartBar = () => {
