@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import '@styles/global.scss';
 
 import { AuthContextState } from '../context/authContext';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import ROUTE from '@config/routes.json';
+
+/********************/
+/*	Pages
+/********************/
 import Login from '@pages-auth/Login/Login';
 import Register from '@pages-auth/Register/Register';
 import Dashboard from '@pages/Dashboard/Dashboard';
@@ -14,7 +19,7 @@ const App = () => {
 		<AuthContextState>
 			<Routes>
 				<Route
-					path="/login"
+					path={ROUTE.LOGIN}
 					exac
 					element={
 						<PublicRoute>
@@ -24,7 +29,7 @@ const App = () => {
 				/>
 
 				<Route
-					path="/register"
+					path={ROUTE.REGISTER}
 					exac
 					element={
 						<PublicRoute>
@@ -34,7 +39,7 @@ const App = () => {
 				/>
 
 				<Route
-					path="/"
+					path={ROUTE.HOME}
 					element={
 						<PrivateRoute>
 							<Dashboard />

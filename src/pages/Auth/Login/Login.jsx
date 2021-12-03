@@ -1,5 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ROUTE from '@config/routes.json';
+
 import { Container, Card, Button, FloatingLabel, Form } from 'react-bootstrap';
 import AuthContext from '@context/authContext';
 import './Login.scss';
@@ -11,7 +13,7 @@ const Login = () => {
 	useEffect(() => {
 		const currentUser = localStorage.getItem('currentUser');
 		if (currentUser !== null) {
-			navigate('/');
+			navigate(ROUTE.HOME);
 			return;
 		}
 	}, []);
