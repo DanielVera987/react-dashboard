@@ -17,7 +17,8 @@ module.exports = {
 			'@context': path.resolve(__dirname, 'src/context'),
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@pages-auth': path.resolve(__dirname, 'src/pages/Auth'),
-            '@styles': path.resolve(__dirname, 'src/styles'),
+            '@services': path.resolve(__dirname, 'src/services'),
+			'@styles': path.resolve(__dirname, 'src/styles'),
         },
     },
     module: {
