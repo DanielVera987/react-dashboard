@@ -1,33 +1,48 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from '@components/Layout/Layout';
+import React, { useContext } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import '@styles/global.scss';
+
+import { AuthContextState } from '../context/authContext';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 import Login from '@pages-auth/Login/Login';
 import Register from '@pages-auth/Register/Register';
-
-import '@styles/global.scss';
-import Dashboard from '../pages/Dashboard/Dashboard';
+import Dashboard from '@pages/Dashboard/Dashboard';
 
 const App = () => {
-    function PrivateRoute({ children }) {
-        const auth = true;
-        return auth ? <Layout>{children}</Layout> : <Navigate to="/login" />;
-    }
-
     return (
-        <>
-            <Routes>
-                <Route path="/login" element={<Login />} exac />
-                <Route path="/register" element={<Register />} exac />
-                <Route
-                    path="/"
-                    element={
-                        <PrivateRoute>
-                            <Dashboard />
-                        </PrivateRoute>
-                    }
-                />
-            </Routes>
-        </>
+		<AuthContextState>
+			<Routes>
+				<Route
+					path="/login"
+					exac
+					element={
+						<PublicRoute>
+							<Login />
+						</PublicRoute>
+					}
+				/>
+
+				<Route
+					path="/register"
+					exac
+					element={
+						<PublicRoute>
+							<Register />
+						</PublicRoute>
+					}
+				/>
+
+				<Route
+					path="/"
+					element={
+						<PrivateRoute>
+							<Dashboard />
+						</PrivateRoute>
+					}
+				/>
+			</Routes>
+		</AuthContextState>
     );
 };
 

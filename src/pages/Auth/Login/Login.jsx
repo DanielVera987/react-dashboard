@@ -1,15 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, Card, Button, FloatingLabel, Form } from 'react-bootstrap';
-
+import AuthContext from '@context/authContext';
 import './Login.scss';
 
 const Login = () => {
+	const navigate = useNavigate();
+	const { handleUserLogin, authState } = useContext(AuthContext);
+
+	useEffect(() => {
+		const currentUser = localStorage.getItem('currentUser');
+		if (currentUser !== null) {
+			navigate('/');
+			return;
+		}
+	}, []);
+
+	const handleSubmit = () => {
+		const data = {
+			username: "daniel",
+			token: "fffff"
+		};
+		handleUserLogin(data);
+	}
+
     return (
         <Container>
             <div className="Login">
                 <Card>
-                    <Card.Header as="h5">React Dashboard</Card.Header>
+                    <Card.Header as="h5">React Dashboard {authState ? 'true' : 'false'}</Card.Header>
                     <Card.Body>
                         <Card.Title className="font-weight-600 mb-4">
                             Login
@@ -42,6 +61,7 @@ const Login = () => {
                         <Button
                             variant="primary"
                             className="d-block w-100 mt-3"
+							onClick={handleSubmit}
                         >
                             Submit
                         </Button>
