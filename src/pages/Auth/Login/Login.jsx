@@ -30,7 +30,7 @@ const Login = () => {
         <Container>
             <div className="Login">
                 <Card>
-                    <Card.Header as="h5">React Dashboard {authState ? 'true' : 'false'}</Card.Header>
+                    <Card.Header as="h5">React Dashboard</Card.Header>
                     <Card.Body>
                         <Card.Title className="font-weight-600 mb-4">
                             Login
