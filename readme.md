@@ -8,15 +8,6 @@ En desarrollo
 
 React Dashboard es un proyecto que fue creado con la finalidad de poder hacer uso de ella, de una forma rapida y sencilla, haciendo uso de librerias ya integradas. Este proyecto esta abierto a cambios, modificaciones y mejoras de cualquier tipo, si gustas colaborar estaria muy agradecido.
 
-### **Features**
-
-- Crear la autenticación
-- Crear vista de usuarios
-- Integrar formik
-- Diseñar formularios para crear usuarios
-- Configuración para rutas
-- Agregar pagina 404
-
 ### Alias
 
 - @assets: 'src/assets'
@@ -40,6 +31,7 @@ React Dashboard es un proyecto que fue creado con la finalidad de poder hacer us
 - [React Router](https://reactrouter.com/) V6
 - [Fortawesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
 - [Sass](https://www.npmjs.com/package/sass)
+- [Formik](https://www.npmjs.com/package/formik)
 
 ### Autor
 
