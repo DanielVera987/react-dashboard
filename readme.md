@@ -14,12 +14,18 @@ React Dashboard es un proyecto que fue creado con la finalidad de poder hacer us
     - Archivos estaticos como imagenes, iconos, fuentes etc.
 - @components: 'src/components'
     - Componentes reutilizables para toda la aplicación, cada componente esta dentro de su carpeta y sus estilos
+- @config: 'src/config'
+		- Configuraciones generales
 - @layout: 'src/components/Layout'
     - Carpeta donde se guardara el layout de la aplicación
 - @pages: 'src/pages'
     - Carpeta donde se guardas la paginas de la aplicación, cada una de ellas se encuentra en su carpeta con sus estilos
+- @contest: 'src/context'
+		- Contexts
 - @pages-auth: 'src/pages/Auth'
     - Carpeta donde se encuentran las paginas de autenticación
+- @services: 'src/services'
+		- Consumo de apis
 - @styles: 'src/styles'
     - Carpeta donde se encuentran los estilos globales como variables
 

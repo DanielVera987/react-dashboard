@@ -15,11 +15,11 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components'),
             '@config': path.resolve(__dirname, 'src/config'),
             '@layout': path.resolve(__dirname, 'src/components/Layout'),
-			'@context': path.resolve(__dirname, 'src/context'),
+						'@context': path.resolve(__dirname, 'src/context'),
             '@pages': path.resolve(__dirname, 'src/pages'),
             '@pages-auth': path.resolve(__dirname, 'src/pages/Auth'),
             '@services': path.resolve(__dirname, 'src/services'),
-			'@styles': path.resolve(__dirname, 'src/styles'),
+						'@styles': path.resolve(__dirname, 'src/styles'),
         },
     },
     module: {
